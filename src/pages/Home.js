@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Logo from '../assets/wantedLogo.svg';
 import NavBar from '../components/NavBar';
 import NavAside from '../components/NavAside';
+import BG from '../assets/Background.PNG';
 
 const Home = () => (
   <StyledWrap>
@@ -14,6 +15,7 @@ const Home = () => (
         <NavBar />
         <NavAside />
       </Box>
+      <img src={BG} alt="temp" width="100%" />
     </StyledHeader>
   </StyledWrap>
 );

@@ -1,23 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { cloneDeep } from 'lodash';
 import ModalList from './ModalList';
 import Data from '../data/data.json';
 
-const getCategories = (categories, maxNum) => {
-  const result = categories;
-  result[maxNum - 1].category = categories.filter((item, idx) => idx >= maxNum - 1).map((item) => item.category);
-  return result.slice(0, maxNum);
+const fetchData = (categories, cnt) => {
+  const res = categories;
+  res[cnt - 1].category = categories.filter((i, idx) => idx >= cnt - 1).map((i) => i.category);
+  return res.slice(0, cnt);
 };
 
-const Modal = () => {
-  const categories = getCategories(cloneDeep(Data.ModalData), 6);
+const Modal = ({ isOpen, onMouseLeave }) => {
+  const data = fetchData(cloneDeep(Data.ModalData), 6);
   return (
-    <Wrapper>
+    <Wrapper isOpen={isOpen} onMouseLeave={onMouseLeave}>
       <Container>
         <CategoryWrap>
-          {categories.map((item) => (
-            <ModalList category={item.category} subCategory={item.sub} />
+          {data.map((i) => (
+            <ModalList category={i.category} subCategory={i.sub} />
           ))}
         </CategoryWrap>
       </Container>
@@ -25,23 +26,23 @@ const Modal = () => {
   );
 };
 
+Modal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onMouseLeave: PropTypes.func.isRequired,
+};
+
 const Wrapper = styled.div`
-  display: none;
-  .list li:first-child:hover ~ & {
-    display: flex;
-  }
+  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
   position: absolute;
-  top: 2.7rem;
+  top: 3rem;
   left: 0;
   width: 100%;
-  height: calc(100vh - 50px);
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 10000;
 `;
 const Container = styled.div`
   width: 100%;
   padding: 2rem;
   background-color: #fff;
+  box-shadow: 0 8rem 10rem #bdbdbd;
 `;
 const CategoryWrap = styled.ul`
   display: flex;

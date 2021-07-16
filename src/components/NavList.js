@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const NavList = ({ link, isBeta, title }) => (
-  <StyledList>
+const NavList = ({ link, isBeta, title, onMouseEnter }) => (
+  <StyledList onMouseEnter={onMouseEnter}>
     <StyledLink href={link} isBeta={isBeta}>
       {title}
     </StyledLink>
@@ -14,6 +14,7 @@ NavList.propTypes = {
   link: PropTypes.string.isRequired,
   isBeta: PropTypes.bool.isRequired,
   title: PropTypes.string.isRequired,
+  onMouseEnter: PropTypes.func.isRequired,
 };
 
 const StyledList = styled.li`
