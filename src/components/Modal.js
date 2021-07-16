@@ -27,7 +27,7 @@ const Modal = () => {
 
 const Wrapper = styled.div`
   display: none;
-  .active {
+  .list li:first-child:hover ~ & {
     display: flex;
   }
   position: absolute;
