@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import NavBar from '../components/NavBar';
 import Logo from '../assets/wantedLogo.svg';
+import NavBar from '../components/NavBar';
+import NavAside from '../components/NavAside';
 
 const Home = () => (
   <StyledWrap>
@@ -11,6 +12,7 @@ const Home = () => (
           <StyledLogo src={Logo} />
         </a>
         <NavBar />
+        <NavAside />
       </Box>
     </StyledHeader>
   </StyledWrap>

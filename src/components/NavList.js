@@ -31,15 +31,6 @@ const StyledLink = styled.a.attrs(({ isBeta }) => ({
   font-size: 1rem;
   font-weight: bold;
 
-  &:hover::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: #3a86f9;
-  }
   &::after {
     content: ${({ isBeta }) => isBeta};
     position: absolute;
@@ -48,6 +39,16 @@ const StyledLink = styled.a.attrs(({ isBeta }) => ({
     font-size: 0.6rem;
     font-weight: 1px;
     color: #3a86f9;
+  }
+
+  &:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #3a86f9;
   }
 `;
 export default NavList;
