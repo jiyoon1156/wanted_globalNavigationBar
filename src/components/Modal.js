@@ -40,7 +40,7 @@ const Wrapper = styled.div`
 `;
 const Container = styled.div`
   width: 100%;
-  padding: 3rem;
+  padding: 5rem;
   background-color: #fff;
   box-shadow: 0 10rem 10rem #bdbdbd;
 `;

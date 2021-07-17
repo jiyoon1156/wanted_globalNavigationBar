@@ -188,36 +188,36 @@
     },
     {
       "category": {
-        "title": "엔지니어링·설계",
+        "title": "금융",
         "link": ""
       },
       "sub": [
         {
-          "title": "전자 엔지니어",
+          "title": "회계담당",
           "link": ""
         },
         {
-          "title": "기계 엔지니어",
+          "title": "재무 담당자",
           "link": ""
         },
         {
-          "title": "전기 엔지니어",
+          "title": "IR",
           "link": ""
         },
         {
-          "title": "전기기계 공학자",
+          "title": "투자·증권",
           "link": ""
         },
         {
-          "title": "로봇·자동화",
+          "title": "재무 분석가",
           "link": ""
         },
         {
-          "title": "QA 엔지니어",
+          "title": "애널리스트",
           "link": ""
         },
         {
-          "title": "제품 엔지니어",
+          "title": "내부통제 담당자",
           "link": ""
         },
         {
@@ -228,14 +228,7 @@
     },
     {
       "category": {
-        "title": "금융",
-        "link": ""
-      },
-      "sub": []
-    },
-    {
-      "category": {
-        "title": "제조·생산",
+        "title": "엔지니어링·설계",
         "link": ""
       },
       "sub": []
@@ -243,6 +236,13 @@
     {
       "category": {
         "title": "물류·무역",
+        "link": ""
+      },
+      "sub": []
+    },
+    {
+      "category": {
+        "title": "제조·생산",
         "link": ""
       },
       "sub": []
