@@ -10,7 +10,7 @@ RoundedText.propTypes = {
 
 const StyledRoundedText = styled.span`
   display: flex;
-  padding: 0.5rem;
+  padding: 0.3rem;
   margin: 0 0.5rem;
   border: 1px solid #ddd;
   border-radius: 15px;

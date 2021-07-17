@@ -2,49 +2,66 @@ import React from 'react';
 import styled from 'styled-components';
 import Search from '../assets/SearchIcon.svg';
 import Bell from '../assets/BellIcon.svg';
-import Profile from '../assets/Profile.PNG';
 import RoundedText from './RoundedText';
 
 const NavAside = () => (
   <Container>
-    <StyledIcon src={Search} alt="돋보기" />
-    <Wrapper>
-      <StyledIcon src={Bell} alt="벨" />
-    </Wrapper>
-    <Wrapper>
-      <ProfileContainer>
-        <StyledProfile src={Profile} alt="프로필" />
-      </ProfileContainer>
-    </Wrapper>
-    <RoundedText>기업서비스</RoundedText>
+    <IconBox>
+      <StyledIcon href="">
+        <img src={Search} alt="검색" />
+      </StyledIcon>
+      <StyledIcon href="">
+        <img src={Bell} alt="알림" />
+      </StyledIcon>
+      <StyledIcon href="">
+        <ProfileContainer>
+          <StyledProfile />
+        </ProfileContainer>
+      </StyledIcon>
+    </IconBox>
+    <TextBox href="">
+      <RoundedText>기업서비스</RoundedText>
+    </TextBox>
   </Container>
 );
-const Wrapper = styled.div`
+const IconBox = styled.div`
   display: flex;
-  padding: 0 0.3rem;
-  font-size: 1rem;
-  font-weight: bold;
-
-  &::after {
-    content: 'N';
-    font-size: 0.6rem;
-    font-weight: 1px;
-    color: #3a86f9;
-  }
+  padding: 0 10px;
 `;
-const StyledIcon = styled.img`
+const TextBox = styled.a`
+  border-left: 0.1em solid #dfdfdf;
+  padding: 0 10px;
+`;
+// const Wrapper = styled.div`
+//   // position: relative;
+//   display: flex;
+//   // align-items: center;
+
+//   &::after {
+//     content: 'N';
+//     // position: absolute;
+//     top: -0.5rem;
+//     right: -0.1rem;
+//     font-size: 0.6rem;
+//     font-weight: bold;
+//     color: #3a86f9;
+//   }
+// `;
+const StyledIcon = styled.a`
   width: 20px;
+  padding: 0 10px;
 `;
 
-const StyledProfile = styled.img`
+const StyledProfile = styled.div`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background-color: #23e6b0;
 `;
 
 const ProfileContainer = styled.div`
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 70%;
   background: #bdbdbd;
   overflow: hidden;
@@ -52,7 +69,7 @@ const ProfileContainer = styled.div`
 
 const Container = styled.aside`
   display: flex;
-  padding: 15px;
+  align-items: center;
 `;
 
 export default NavAside;

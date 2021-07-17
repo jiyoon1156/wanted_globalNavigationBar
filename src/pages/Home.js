@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Logo from '../assets/wantedLogo.svg';
 import NavBar from '../components/NavBar';
 import NavAside from '../components/NavAside';
-import BG from '../assets/Background.PNG';
 
 const Home = () => (
   <StyledWrap>
@@ -15,7 +14,6 @@ const Home = () => (
         <NavBar />
         <NavAside />
       </Box>
-      <img src={BG} alt="temp" width="100%" />
     </StyledHeader>
   </StyledWrap>
 );
@@ -28,7 +26,6 @@ const StyledHeader = styled.header`
   height: 3rem;
   border-bottom: 1px solid #ddd;
   background-color: #fff;
-  z-index: 100;
 `;
 const Box = styled.div`
   display: flex;
@@ -37,7 +34,7 @@ const Box = styled.div`
   max-width: 106rem;
   width: 100%;
   height: 3rem;
-  margin: 0 auto;
+  // margin: 0 auto;
 `;
 const StyledLogo = styled.img`
   width: 80px;

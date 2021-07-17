@@ -40,9 +40,9 @@ const Wrapper = styled.div`
 `;
 const Container = styled.div`
   width: 100%;
-  padding: 2rem;
+  padding: 3rem;
   background-color: #fff;
-  box-shadow: 0 8rem 10rem #bdbdbd;
+  box-shadow: 0 10rem 10rem #bdbdbd;
 `;
 const CategoryWrap = styled.ul`
   display: flex;

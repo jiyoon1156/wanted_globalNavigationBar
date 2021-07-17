@@ -6,6 +6,11 @@ import Modal from './Modal';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isClick, setClick] = useState(false);
+  // const Click = () => {
+  //   console.log(isClick);
+  //   setClick(true);
+  // };
   return (
     <StyledNav>
       <StyledUl className="list">
@@ -15,12 +20,13 @@ const NavBar = () => {
             link={i.link}
             title={i.title}
             category={i.category}
-            isBeta={i.isBeta}
             onMouseEnter={() => (i.title === '탐색' ? setIsOpen(true) : setIsOpen(false))}
+            onClick={() => setClick(true)}
+            isClick={isClick}
           />
         ))}
-        <Modal className="modal" isOpen={isOpen} onMouseLeave={() => setIsOpen(false)} />
       </StyledUl>
+      <Modal className="modal" isOpen={isOpen} onMouseLeave={() => setIsOpen(false)} />
     </StyledNav>
   );
 };
