@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { cloneDeep } from 'lodash';
 import ModalList from './ModalList';
 import Data from '../data/data.json';
 
@@ -12,13 +11,14 @@ const fetchData = (categories, cnt) => {
 };
 
 const Modal = ({ isOpen, onMouseLeave }) => {
-  const data = fetchData(cloneDeep(Data.ModalData), 6);
+  const deepCopiedData = JSON.parse(JSON.stringify(Data.ModalData));
+  const data = fetchData(deepCopiedData, 6);
   return (
     <Wrapper isOpen={isOpen} onMouseLeave={onMouseLeave}>
       <Container>
         <CategoryWrap>
           {data.map((i) => (
-            <ModalList category={i.category} subCategory={i.sub} />
+            <ModalList key={i.title} category={i.category} subCategory={i.sub} />
           ))}
         </CategoryWrap>
       </Container>
@@ -34,13 +34,13 @@ Modal.propTypes = {
 const Wrapper = styled.div`
   display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
   position: absolute;
-  top: 3rem;
+  top: 4rem;
   left: 0;
   width: 100%;
 `;
 const Container = styled.div`
   width: 100%;
-  padding: 5rem;
+  padding: 3rem;
   background-color: #fff;
   box-shadow: 0 10rem 10rem #bdbdbd;
 `;

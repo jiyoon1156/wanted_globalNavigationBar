@@ -3,14 +3,11 @@ import styled from 'styled-components';
 import data from '../data/data.json';
 import NavList from './NavList';
 import Modal from './Modal';
+import theme from '../styles/theme';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isClick, setClick] = useState(false);
-  // const Click = () => {
-  //   console.log(isClick);
-  //   setClick(true);
-  // };
+
   return (
     <StyledNav>
       <StyledUl className="list">
@@ -21,8 +18,6 @@ const NavBar = () => {
             title={i.title}
             category={i.category}
             onMouseEnter={() => (i.title === '탐색' ? setIsOpen(true) : setIsOpen(false))}
-            onClick={() => setClick(true)}
-            isClick={isClick}
           />
         ))}
       </StyledUl>
@@ -32,12 +27,20 @@ const NavBar = () => {
 };
 
 const StyledNav = styled.nav`
+  width: 60%;
   height: 100%;
 `;
+
 const StyledUl = styled.ul`
   display: flex;
+  justify-content: space-between;
+  max-width: 550px;
   height: 100%;
   white-space: nowrap;
+
+  @media only screen and (max-width: ${theme.breakpoint.desktop}px) {
+    width: auto;
+  }
 `;
 
 export default NavBar;

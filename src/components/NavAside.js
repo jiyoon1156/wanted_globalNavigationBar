@@ -18,38 +18,28 @@ const NavAside = () => (
           <StyledProfile />
         </ProfileContainer>
       </StyledIcon>
+      <TextBox href="">
+        <RoundedText>기업서비스</RoundedText>
+      </TextBox>
     </IconBox>
-    <TextBox href="">
-      <RoundedText>기업서비스</RoundedText>
-    </TextBox>
   </Container>
 );
-const IconBox = styled.div`
+const IconBox = styled.ul`
   display: flex;
-  padding: 0 10px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 `;
 const TextBox = styled.a`
   border-left: 0.1em solid #dfdfdf;
-  padding: 0 10px;
+  padding-left: 16px;
 `;
-// const Wrapper = styled.div`
-//   // position: relative;
-//   display: flex;
-//   // align-items: center;
 
-//   &::after {
-//     content: 'N';
-//     // position: absolute;
-//     top: -0.5rem;
-//     right: -0.1rem;
-//     font-size: 0.6rem;
-//     font-weight: bold;
-//     color: #3a86f9;
-//   }
-// `;
 const StyledIcon = styled.a`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 20px;
-  padding: 0 10px;
 `;
 
 const StyledProfile = styled.div`
@@ -70,6 +60,8 @@ const ProfileContainer = styled.div`
 const Container = styled.aside`
   display: flex;
   align-items: center;
+  width: 250px;
+  margin-left: 16px;
 `;
 
 export default NavAside;

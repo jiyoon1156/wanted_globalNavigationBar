@@ -1,3 +1,5 @@
+/* eslint-disable react/require-default-props */
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -9,7 +11,7 @@ const ModalList = ({ category, subCategory }) => {
       {Array.isArray(category) ? (
         <CategoryWrap>
           {category.map((i) => (
-            <Category href={i.link}>
+            <Category key={i.title} href={i.link}>
               <CategoryTitle>{i.title}</CategoryTitle>
             </Category>
           ))}
@@ -33,18 +35,14 @@ const ModalList = ({ category, subCategory }) => {
 };
 
 ModalList.propTypes = {
-  category: PropTypes.node.isRequired,
-  subCategory: PropTypes.node.isRequired,
+  category: PropTypes.any,
+  subCategory: PropTypes.array.isRequired,
 };
 
 const Wrapper = styled.li`
   display: flex;
   flex-direction: column;
-  width: 14%;
-
-  &:not(:last-child) {
-    padding-right: 1.5rem;
-  }
+  width: 15%;
 `;
 const CategoryWrap = styled.div`
   display: flex;

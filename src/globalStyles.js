@@ -1,7 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-html, body, div, span, applet, object, iframe,
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
   del, dfn, em, img, ins, kbd, q, s, samp,
@@ -14,8 +21,6 @@ html, body, div, span, applet, object, iframe,
   figure, figcaption, footer, header, hgroup,
   menu, nav, output, ruby, section, summary,
   time, mark, audio, video, button {
-    margin: 0;
-    padding: 0;
     border: 0;
     font-size: inherit;
     vertical-align: baseline;
@@ -29,17 +34,5 @@ html, body, div, span, applet, object, iframe,
   }
   aside, ol, ul {
     list-style: none;
-  }
-  blockquote, q {
-    quotes: none;
-  }
-  blockquote:before, blockquote:after,
-  q:before, q:after {
-    content: '';
-    content: none;
-  }
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
   }
 `;
