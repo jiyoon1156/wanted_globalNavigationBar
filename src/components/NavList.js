@@ -11,7 +11,7 @@ const NavList = ({ link, title, onMouseEnter }) => (
 NavList.propTypes = {
   link: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  onMouseEnter: PropTypes.func.isRequired,
+  onMouseEnter: PropTypes.func,
 };
 
 const StyledList = styled.li`

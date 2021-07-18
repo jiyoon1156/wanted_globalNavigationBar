@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+
 import ModalList from './ModalList';
 import Data from '../data/data.json';
 
@@ -11,14 +12,14 @@ const fetchData = (categories, cnt) => {
 };
 
 const Modal = ({ isOpen, onMouseLeave }) => {
-  const deepCopiedData = JSON.parse(JSON.stringify(Data.ModalData));
-  const data = fetchData(deepCopiedData, 6);
+  const CopiedData = JSON.parse(JSON.stringify(Data.ModalData));
+  const data = fetchData(CopiedData, 6);
   return (
     <Wrapper isOpen={isOpen} onMouseLeave={onMouseLeave}>
       <Container>
         <CategoryWrap>
-          {data.map((i) => (
-            <ModalList key={i.title} category={i.category} subCategory={i.sub} />
+          {data.map((i, index) => (
+            <ModalList key={index} category={i.category} subCategory={i.sub} />
           ))}
         </CategoryWrap>
       </Container>

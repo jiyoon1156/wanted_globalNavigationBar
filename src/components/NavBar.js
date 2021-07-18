@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+
 import data from '../data/data.json';
 import NavList from './NavList';
 import Modal from './Modal';

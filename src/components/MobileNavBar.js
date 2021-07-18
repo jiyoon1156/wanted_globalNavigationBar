@@ -1,15 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import NavList from './NavList';
 
-const menuNames = ['홈', '탐색', '커리어 성장'];
+const data = {
+  menuNames: [
+    {
+      title: '홈',
+      link: '',
+    },
+    {
+      title: '탐색',
+      link: '',
+    },
+    {
+      title: '커리어 성장',
+      link: '',
+    },
+  ],
+};
 
 const MobileNavBar = () => {
   return (
     <StyledNav>
       <StyledUl className="list">
-        {menuNames.map((menu) => (
-          <NavList key={menu} title={menu} />
+        {data.menuNames.map((i) => (
+          <NavList key={i.title} title={i.title} link={i.link} />
         ))}
       </StyledUl>
     </StyledNav>

@@ -1,8 +1,7 @@
-/* eslint-disable react/require-default-props */
-/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+
 import Arrow from '../assets/ArrowIcon.svg';
 
 const ModalList = ({ category, subCategory }) => {

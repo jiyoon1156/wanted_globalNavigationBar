@@ -19,6 +19,9 @@
     "plugins": ["prettier"],
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
+        "react/require-default-props": "off",
+        "react/forbid-prop-types": "off",
+        "react/no-array-index-key": "off"
     }
 }
